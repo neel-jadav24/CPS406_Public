@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html,
+	body,
+	#__next {
+		min-height: 100%;
+	}
+
+	body {
+		@apply bg-appBg font-brand text-appText antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		letter-spacing: -0.02em;
+	}
+}
+
+@layer components {
+	.app-shell {
+		@apply relative min-h-screen overflow-hidden bg-appBg;
+	}
+
+	.page-container {
+		@apply mx-auto w-full max-w-7xl px-4 sm:px-6;
+	}
+
+	.page-main {
+		@apply py-8 sm:py-10 lg:py-12;
+	}
+
+	.page-main-compact {
+		@apply py-6 sm:py-8;
+	}
+
+	.ambient-blob {
+		@apply pointer-events-none absolute rounded-full blur-3xl;
+	}
+
+	.top-nav {
+		@apply border-b border-appBorder bg-white/80 backdrop-blur;
+	}
+
+	.nav-link {
+		@apply text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-brandIndigo;
+	}
+
+	.section-title {
+		@apply text-3xl font-extrabold leading-tight text-appText sm:text-4xl lg:text-5xl;
+	}
+
+	.section-subtitle {
+		@apply text-base leading-7 text-appMuted sm:text-lg;
+	}
+
+	.surface-card {
+		@apply rounded-xl border border-appBorder bg-appSurface shadow-soft transition-all duration-200 hover:-translate-y-1 hover:shadow-soft-lg;
+	}
+
+	.form-card {
+		@apply rounded-xl border border-appBorder bg-appSurface p-6 shadow-soft sm:p-8;
+	}
+
+	.feature-icon {
+		@apply flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-brandIndigo;
+	}
+
+	.input-label {
+		@apply mb-1.5 block text-sm font-semibold text-slate-700;
+	}
+
+	.text-input {
+		@apply w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-base text-slate-900 placeholder:text-slate-400 focus-visible:border-brandIndigo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandIndigo focus-visible:ring-offset-1;
+	}
+
+	.btn-primary {
+		@apply inline-flex min-h-11 items-center justify-center rounded-lg bg-gradient-to-r from-brandIndigo to-brandViolet px-5 py-2.5 text-sm font-semibold text-white shadow-brand-btn transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brand-btn-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandIndigo focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+	}
+
+	.btn-secondary {
+		@apply inline-flex min-h-11 items-center justify-center rounded-lg border border-appBorder bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandIndigo focus-visible:ring-offset-2;
+	}
+
+	.status-chip {
+		@apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+	}
+
+	.grid-table {
+		@apply overflow-hidden rounded-xl border border-appBorder bg-white shadow-soft;
+	}
+
+	.helper-text {
+		@apply text-xs text-appMuted;
+	}
+}
